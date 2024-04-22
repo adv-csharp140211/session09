@@ -18,6 +18,8 @@ Service / API
 
 		get /procuts
 
+		swaggerUI / OpenAPI
+
 	gRPC
 		*binray - protobuf
 		*http2 - speed
