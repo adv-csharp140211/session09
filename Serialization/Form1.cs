@@ -69,7 +69,7 @@ public partial class Form1 : Form
 
         var result = JsonSerializer.Serialize(product, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
         await File.WriteAllTextAsync(Path.Combine(AppContext.BaseDirectory, "product.json"), result);
-        MessageBox.Show($"Done");
+        MessageBox.Show($"Done");        
     }
 
     private async void buttonJsonDes_Click(object sender, EventArgs e)
