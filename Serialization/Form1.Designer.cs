@@ -28,11 +28,45 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-        this.components = new System.ComponentModel.Container();
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Text = "Form1";
+        buttonXMLSerialize = new Button();
+        buttonXMLDeserialize = new Button();
+        SuspendLayout();
+        // 
+        // buttonXMLSerialize
+        // 
+        buttonXMLSerialize.Location = new Point(12, 12);
+        buttonXMLSerialize.Name = "buttonXMLSerialize";
+        buttonXMLSerialize.Size = new Size(139, 23);
+        buttonXMLSerialize.TabIndex = 0;
+        buttonXMLSerialize.Text = "XML Serialize";
+        buttonXMLSerialize.UseVisualStyleBackColor = true;
+        buttonXMLSerialize.Click += buttonXMLSerialize_Click;
+        // 
+        // buttonXMLDeserialize
+        // 
+        buttonXMLDeserialize.Location = new Point(12, 41);
+        buttonXMLDeserialize.Name = "buttonXMLDeserialize";
+        buttonXMLDeserialize.Size = new Size(139, 23);
+        buttonXMLDeserialize.TabIndex = 1;
+        buttonXMLDeserialize.Text = "XML Deserialize";
+        buttonXMLDeserialize.UseVisualStyleBackColor = true;
+        buttonXMLDeserialize.Click += buttonXMLDeserialize_Click;
+        // 
+        // Form1
+        // 
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(861, 432);
+        Controls.Add(buttonXMLDeserialize);
+        Controls.Add(buttonXMLSerialize);
+        Name = "Form1";
+        Text = "Form1";
+        Load += Form1_Load;
+        ResumeLayout(false);
     }
 
     #endregion
+
+    private Button buttonXMLSerialize;
+    private Button buttonXMLDeserialize;
 }
