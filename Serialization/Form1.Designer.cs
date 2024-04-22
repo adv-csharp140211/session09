@@ -32,6 +32,7 @@ partial class Form1
         buttonXMLDeserialize = new Button();
         buttonJSONSer = new Button();
         buttonJsonDes = new Button();
+        buttonBinSer = new Button();
         SuspendLayout();
         // 
         // buttonXMLSerialize
@@ -74,11 +75,22 @@ partial class Form1
         buttonJsonDes.UseVisualStyleBackColor = true;
         buttonJsonDes.Click += buttonJsonDes_Click;
         // 
+        // buttonBinSer
+        // 
+        buttonBinSer.Location = new Point(450, 12);
+        buttonBinSer.Name = "buttonBinSer";
+        buttonBinSer.Size = new Size(139, 23);
+        buttonBinSer.TabIndex = 4;
+        buttonBinSer.Text = "Binary Serialize";
+        buttonBinSer.UseVisualStyleBackColor = true;
+        buttonBinSer.Click += buttonBinSer_Click;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(861, 432);
+        Controls.Add(buttonBinSer);
         Controls.Add(buttonJsonDes);
         Controls.Add(buttonJSONSer);
         Controls.Add(buttonXMLDeserialize);
@@ -95,4 +107,5 @@ partial class Form1
     private Button buttonXMLDeserialize;
     private Button buttonJSONSer;
     private Button buttonJsonDes;
+    private Button buttonBinSer;
 }

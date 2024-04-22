@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Runtime.Serialization.Formatters.Binary;
+using System.Text.Json;
 using System.Xml.Serialization;
 
 namespace Serialization;
@@ -76,5 +77,13 @@ public partial class Form1 : Form
         var json = await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "product.json"));
         var p = JsonSerializer.Deserialize<Product>(json);
         MessageBox.Show($"Done - {p.Name}");
+    }
+
+    private void buttonBinSer_Click(object sender, EventArgs e)
+    {
+        //var ser = new BinaryFormatter();
+        //var stream = new FileStream(Path.Combine(AppContext.BaseDirectory, "product.bin"), FileMode.Create);
+        //ser.Serialize(stream, product);
+        //stream.Close();
     }
 }
