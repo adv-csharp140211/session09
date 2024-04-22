@@ -1,3 +1,4 @@
+﻿using System.Text.Json;
 using System.Xml.Serialization;
 
 namespace Serialization;
@@ -54,8 +55,26 @@ public partial class Form1 : Form
     {
         var xmlSer = new XmlSerializer(typeof(Product));
         var stream = new StreamReader(Path.Combine(AppContext.BaseDirectory, "product.xml"));
-        var p =  xmlSer.Deserialize(stream) as Product;
+        var p = xmlSer.Deserialize(stream) as Product;
 
+        MessageBox.Show($"Done - {p.Name}");
+    }
+
+    private async void buttonJSONSer_Click(object sender, EventArgs e)
+    {
+        //JSON
+        // NewtonSoft.JSON
+        // Sytem.Text.Json ✔️
+
+        var result = JsonSerializer.Serialize(product, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+        await File.WriteAllTextAsync(Path.Combine(AppContext.BaseDirectory, "product.json"), result);
+        MessageBox.Show($"Done");
+    }
+
+    private async void buttonJsonDes_Click(object sender, EventArgs e)
+    {
+        var json = await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "product.json"));
+        var p = JsonSerializer.Deserialize<Product>(json);
         MessageBox.Show($"Done - {p.Name}");
     }
 }

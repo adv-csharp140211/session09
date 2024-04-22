@@ -30,6 +30,8 @@ partial class Form1
     {
         buttonXMLSerialize = new Button();
         buttonXMLDeserialize = new Button();
+        buttonJSONSer = new Button();
+        buttonJsonDes = new Button();
         SuspendLayout();
         // 
         // buttonXMLSerialize
@@ -52,11 +54,33 @@ partial class Form1
         buttonXMLDeserialize.UseVisualStyleBackColor = true;
         buttonXMLDeserialize.Click += buttonXMLDeserialize_Click;
         // 
+        // buttonJSONSer
+        // 
+        buttonJSONSer.Location = new Point(239, 12);
+        buttonJSONSer.Name = "buttonJSONSer";
+        buttonJSONSer.Size = new Size(139, 23);
+        buttonJSONSer.TabIndex = 2;
+        buttonJSONSer.Text = "JSON Serialize";
+        buttonJSONSer.UseVisualStyleBackColor = true;
+        buttonJSONSer.Click += buttonJSONSer_Click;
+        // 
+        // buttonJsonDes
+        // 
+        buttonJsonDes.Location = new Point(239, 41);
+        buttonJsonDes.Name = "buttonJsonDes";
+        buttonJsonDes.Size = new Size(139, 23);
+        buttonJsonDes.TabIndex = 3;
+        buttonJsonDes.Text = "JSON Deserialize";
+        buttonJsonDes.UseVisualStyleBackColor = true;
+        buttonJsonDes.Click += buttonJsonDes_Click;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(861, 432);
+        Controls.Add(buttonJsonDes);
+        Controls.Add(buttonJSONSer);
         Controls.Add(buttonXMLDeserialize);
         Controls.Add(buttonXMLSerialize);
         Name = "Form1";
@@ -69,4 +93,6 @@ partial class Form1
 
     private Button buttonXMLSerialize;
     private Button buttonXMLDeserialize;
+    private Button buttonJSONSer;
+    private Button buttonJsonDes;
 }
